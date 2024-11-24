@@ -4,10 +4,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SandboxK8sManuifestGenerationApplicationTests {
+class SandboxK8sManifestGenerationApplicationTests {
 
     @Test
     void contextLoads() {
     }
+
+
 
 }
