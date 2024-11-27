@@ -1,4 +1,4 @@
-package com.ih0rd.sandbox.k8s;
+package com.ih0rd.sandbox.dekorate;
 
 import io.dekorate.docker.annotation.DockerBuild;
 import io.dekorate.docker.config.DockerBuildConfig;

@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>21</java.version>
+        <dekorate.version>4.1.4</dekorate.version>
     </properties>
 
     <dependencies>
@@ -36,7 +37,7 @@
         <dependency>
             <groupId>io.dekorate</groupId>
             <artifactId>kubernetes-spring-starter</artifactId>
-            <version>4.1.4</version>
+            <version>${dekorate.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -51,29 +52,29 @@
         <dependency>
             <groupId>io.dekorate</groupId>
             <artifactId>kubernetes-junit-starter</artifactId>
-            <version>4.1.4</version>
+            <version>${dekorate.version}</version>
         </dependency>
         <dependency>
             <groupId>io.dekorate</groupId>
             <artifactId>kubernetes-annotations</artifactId>
-            <version>4.1.4</version>
+            <version>${dekorate.version}</version>
         </dependency>
         <dependency>
             <groupId>io.dekorate</groupId>
             <artifactId>dekorate-spring-boot</artifactId>
-            <version>4.1.4</version>
+            <version>${dekorate.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.dekorate</groupId>
             <artifactId>helm-annotations</artifactId>
-            <version>4.1.4</version>
+            <version>${dekorate.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.dekorate</groupId>
             <artifactId>certmanager-annotations</artifactId>
-            <version>4.1.4</version>
+            <version>${dekorate.version}</version>
         </dependency>
     </dependencies>
 
