@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jkube-helm-deployment
+  labels:
+    app: ${labelsAppName}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ${labelsAppName}
+  template:
+    metadata:
+      labels:
+        app: ${labelsAppName}
+    spec:
+      serviceAccountName: ${serviceAccountName}
+      containers:
+        - name: ${containerName}
+          image: marcnuri/chuck-norris
+          imagePullPolicy: ${containerImagePullPolicy}
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/sh", "-c", "cat /var/log/${helmBuildLogFilename} > /proc/1/fd/1"]
+          volumeMounts:
+            - name: ${volumeName}
+              mountPath: /var/log/
+      volumes:
+        - name: ${volumeName}
+          configMap:
+            name: ${configMapName}

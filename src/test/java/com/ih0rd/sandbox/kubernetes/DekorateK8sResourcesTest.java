@@ -1,4 +1,4 @@
-package com.ih0rd.sandbox.dekorate;
+package com.ih0rd.sandbox.kubernetes;
 
 import io.dekorate.helm.model.Chart;
 import io.dekorate.helm.model.HelmDependency;
@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;

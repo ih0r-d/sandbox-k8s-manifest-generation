@@ -17,6 +17,7 @@
     <properties>
         <java.version>21</java.version>
         <dekorate.version>4.1.4</dekorate.version>
+        <jkube.version>1.17.0</jkube.version>
     </properties>
 
     <dependencies>
@@ -76,6 +77,12 @@
             <artifactId>certmanager-annotations</artifactId>
             <version>${dekorate.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.jkube</groupId>
+            <artifactId>jkube-kit-config-service</artifactId>
+            <version>${jkube.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -133,7 +140,7 @@
             <plugin>
                 <groupId>org.eclipse.jkube</groupId>
                 <artifactId>kubernetes-maven-plugin</artifactId>
-                <version>1.17.0</version>
+                <version>${jkube.version}</version>
             </plugin>
         </plugins>
     </build>

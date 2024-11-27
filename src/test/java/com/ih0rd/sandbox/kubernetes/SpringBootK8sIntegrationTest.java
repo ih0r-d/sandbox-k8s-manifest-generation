@@ -1,4 +1,4 @@
-package com.ih0rd.sandbox.dekorate;
+package com.ih0rd.sandbox.kubernetes;
 
 import io.fabric8.kubernetes.api.model.KubernetesList;
 import io.fabric8.kubernetes.api.model.Pod;
