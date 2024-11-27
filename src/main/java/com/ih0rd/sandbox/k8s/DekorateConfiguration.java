@@ -16,11 +16,13 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @KubernetesApplication(
-        configMapVolumes = @io.dekorate.kubernetes.annotation.ConfigMapVolume(
-                volumeName = "bar-volume", configMapName = "foo-map"
-        )
+        configMapVolumes = @io.dekorate.kubernetes.annotation.ConfigMapVolume(volumeName = "bar-volume", configMapName = "foo-map"),
+        hostAliases = {
+                @io.dekorate.kubernetes.annotation.HostAlias(ip = "127.0.0.1", hostnames = "foo.org,bar.com"),
+                @io.dekorate.kubernetes.annotation.HostAlias(ip = "10.0.0.1", hostnames = "test.com")
+        }
 )
-@DockerBuild(image="foo/bar:baz")
+@DockerBuild(image = "foo/bar:baz")
 @HelmChart(name = "sandbox-k8s-manifest-generation")
 public class DekorateConfiguration {
 
@@ -65,15 +67,7 @@ public class DekorateConfiguration {
 
     @Bean
     public HelmChartConfig helmChartConfig() {
-        return new HelmChartConfigBuilder()
-                .withName(appName)
-                .withVersion(appVersion)
-                .withDescription("Demo application helm chart")
-                .withKeywords("Demo", "java", "spring boot")
-                .withCreateValuesSchemaFile(true)
-                .withCreateTarFile(true)
-                .withCreateReadmeFile(true)
-                .build();
+        return new HelmChartConfigBuilder().withName(appName).withVersion(appVersion).withDescription("Demo application helm chart").withKeywords("Demo", "java", "spring boot").withCreateValuesSchemaFile(true).withCreateTarFile(true).withCreateReadmeFile(true).build();
     }
 
 //    @Bean
