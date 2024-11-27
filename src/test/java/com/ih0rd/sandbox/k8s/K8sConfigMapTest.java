@@ -33,7 +33,7 @@ public class K8sConfigMapTest {
   public void shouldContainConfigMap() {
     KubernetesList list = Serialization.unmarshalAsList(Objects.requireNonNull(K8sConfigMapTest.class.getClassLoader().getResourceAsStream("META-INF/dekorate/kubernetes.yml")));
     assertNotNull(list);
-    assertEquals(2, list.getItems().size());
+    assertEquals(6, list.getItems().size());
     Deployment deployment = (Deployment) list.getItems().getFirst();
     assertEquals("Deployment", deployment.getKind());
     final Volume firstVolume = deployment.getSpec().getTemplate().getSpec().getVolumes().getFirst();

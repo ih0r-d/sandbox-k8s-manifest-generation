@@ -18,7 +18,7 @@ public class K8sCustomImageNameTest {
   public void shouldUseCustomImageName() {
     KubernetesList list = Serialization.unmarshalAsList(Objects.requireNonNull(K8sCustomImageNameTest.class.getClassLoader().getResourceAsStream("META-INF/dekorate/kubernetes.yml")));
     assertNotNull(list);
-    assertEquals(2, list.getItems().size());
+    assertEquals(6, list.getItems().size());
     Deployment deployment = (Deployment) list.getItems().getFirst();
     assertNotNull(deployment);
     Container container = deployment.getSpec().getTemplate().getSpec().getContainers().getFirst();

@@ -70,6 +70,11 @@
             <version>4.1.4</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.dekorate</groupId>
+            <artifactId>certmanager-annotations</artifactId>
+            <version>4.1.4</version>
+        </dependency>
     </dependencies>
 
     <build>
