@@ -1,0 +1,4 @@
+app:
+  serviceType: NodePort
+  config:
+    user: John
