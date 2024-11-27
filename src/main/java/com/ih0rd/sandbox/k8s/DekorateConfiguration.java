@@ -20,7 +20,7 @@ import org.springframework.context.annotation.Configuration;
                 volumeName = "bar-volume", configMapName = "foo-map"
         )
 )
-@DockerBuild
+@DockerBuild(image="foo/bar:baz")
 @HelmChart(name = "sandbox-k8s-manifest-generation")
 public class DekorateConfiguration {
 
