@@ -201,7 +201,7 @@ public class DekorateK8sResourcesTest {
         // Should map ports:
         Map<String, Object> ports = (Map<String, Object>) app.get("ports");
         assertNotNull(ports);
-        assertEquals(8080, ports.get("http"));
+        assertEquals(8443, ports.get("http"));
         // Should include health check properties:
         // 1. tcp socket action
         Map<String, Object> livenessValues = (Map<String, Object>) app.get("livenessProbe");
@@ -216,7 +216,7 @@ public class DekorateK8sResourcesTest {
         assertEquals("/readiness", httpGetValues.get("path"));
         // It should be null because it's now mapped with app.ports.http;
         assertNull(httpGetValues.get("port"));
-        assertEquals("HTTP", httpGetValues.get("scheme"));
+        assertEquals("HTTPS", httpGetValues.get("scheme"));
         // 3. exec action
         Map<String, Object> startupValues = (Map<String, Object>) app.get("startupProbe");
         assertProbe(startupValues, 12, 32);

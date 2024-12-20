@@ -141,6 +141,7 @@
                 <groupId>org.eclipse.jkube</groupId>
                 <artifactId>kubernetes-maven-plugin</artifactId>
                 <version>${jkube.version}</version>
+
             </plugin>
         </plugins>
     </build>

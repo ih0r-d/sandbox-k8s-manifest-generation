@@ -37,7 +37,7 @@ public class SpringBootK8sIntegrationTest {
         Assertions.assertNotNull(list);
         System.out.println("Using pod:" + pod.getMetadata().getName());
         System.out.println("Forwarding port");
-        try (LocalPortForward p = client.services().withName("spring-boot-on-kubernetes-example").portForward(8080)) {
+        try (LocalPortForward p = client.services().withName("spring-boot-on-kubernetes-example").portForward(8443)) {
             assertTrue(p.isAlive());
             final URI uri = URI.create("http://localhost:" + p.getLocalPort() + "/");
             final Optional<HttpResponse<String>> httpResponse = SharedUtils.fetchHttpResponse(uri);
